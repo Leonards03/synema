@@ -148,7 +148,7 @@ class ContentTabs extends HTMLElement{
                 this._shadowRoot.querySelector(".selected").classList.toggle("selected");
                 link.classList.toggle("selected");
                 
-                if(link.dataset.content == "discover"){
+                if(link.dataset.content === "discover"){
                     let activeTab = this._shadowRoot.querySelector(`.tab-pane.${this._activeTab}`);
                     ApiGateway.getDiscover(this._activeTab).then(result =>{
                         this.populate(activeTab, result);
